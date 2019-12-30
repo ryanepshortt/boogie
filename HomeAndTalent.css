@@ -1,0 +1,194 @@
+html, body, .page {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  color: #fff;
+  overflow: hidden; 
+}
+
+* {
+  font-family: 'open sans', 'lato', 'helvetica', sans-serif;
+}
+
+#first {
+	margin-top:200px;
+}
+#second {
+	margin-top:150px;
+	margin-bottom:150px
+}
+
+#p1, #p2, #p3 {
+  left: 0;
+}
+
+#p1 { background-image: radial-gradient(#0aae32, SeaGreen); }
+#p2 { background-image: radial-gradient(#4a7fe0, #2e4f8b); }
+
+
+.menu {
+  position:absolute;
+  z-index: 1;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  height: 100%;
+  width: 10%;
+  padding: 0;
+  text-align: center;
+  border-right: 1px solid white;
+  overflow-y:auto;
+  overflow-x:hidden;
+}
+
+.menu .icon {
+	margin: 30px 0;
+}
+
+#menu1 {
+	background: #407859;
+}	
+
+#menu2 {
+	
+	background: #405478;
+}
+
+
+
+
+a {
+  text-decoration: none;
+}
+
+.icon {
+	color: #fff;
+	font-size: 65px;
+	display: block;
+}
+
+
+ul .icon:hover {
+  opacity: 0.5;
+}
+
+.page .icon .title {
+  line-height: 2;
+}
+
+
+.page .pageInfo {
+	position:absolute;
+	height: 100%;
+	width: 90%;
+	margin-left:10%;
+	margin-right:0;
+}
+
+
+section.newPostBody, section.homePage{
+	overflow-y:scroll;
+}
+
+.post {
+	width: 80%;
+	margin-left:10%;
+	margin-top: 75px;
+	margin-bottom: 75px;
+	border: 7px solid white;
+	border-radius: 12px;
+	position:relative;
+}
+
+.external:visited {
+	color:white;
+}
+
+.external {
+	text-decoration:underline;
+}
+
+.post li {
+	list-style-type: none;
+}
+
+#contactInfo li {
+	list-style-type: disc;
+}
+
+.date {
+	flex: 48%;
+	max-width: 48%;
+}
+
+.location {
+	flex: 48%;
+	max-width: 48%;
+}
+.NightLife {
+	background-image: repeating-linear-gradient(#20603c, #000000);
+}
+
+.LiveMusic {
+	background-image:  repeating-linear-gradient(#2e8b32, #000000);
+}
+
+.Party {
+	background-image: repeating-linear-gradient(#2e8b7c, #000000);
+}
+
+.talent {
+	background-image: repeating-linear-gradient(#322e8b, #000000);
+}
+.post h3 {
+	text-align: center;
+	font-size: 35px;
+	margin:10px 0px;
+}
+.post h4 {
+	font-size: 20px;
+}
+.post {
+	padding-right: 22px;
+	font-size: 20px;
+	line-height: 1.4;
+}
+.c1 {
+	vertical-align: middle;
+}
+.column {
+  flex: 49%;
+  max-width: 49%;
+}
+.column img {
+  margin-top: 8px;
+  vertical-align: middle;
+  width: 100%;
+}
+.row {
+  display: flex;
+  flex-direction:row;
+  flex-wrap: wrap;
+
+
+
+@media screen and (max-width: 800px) {
+  .column {
+    -ms-flex: 50%;
+    flex: 50%;
+    max-width: 50%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .column {
+    -ms-flex: 100%;
+    flex: 100%;
+    max-width: 100%;
+  }
+}
+
+
+
