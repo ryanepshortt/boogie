@@ -1,67 +1,73 @@
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8">
-		<title>Boogie: New Event</title>
-		<link rel="stylesheet" type="text/css" href="BoogieCSS.css"/>
-		<script src="https://kit.fontawesome.com/c3f6c26ab6.js" crossorigin="anonymous"></script>
-	</head>
-	
-	<body> 
-	<!--Menu Bar for the Website -->
-		<div class="header">
-			<ul class="menu" id="menu3">
-				<a href="Home.html"><li class="icon fas fa-home" id="first"></li></a><br>
-				<a href="TalentBar.html"><li class="icon fas fa-star" id="second"></li></a><br>
-				<a href="NewPost.html"><li class="icon fas fa-edit" id="third"></li></a>
-			</ul>
-		</div>
-		<div class="page" id="p3"> 
-			<section class="pageInfo">
-				<section class="newPostHead">
-					<span class="title">New Event</span>
-					<span class="hint">Please fill in the necessary information</span>
-				</section>
-				<section class="newPostBody">
-					<form class="eventForm" action="mailto:r.shortt98@gmail.com" method="POST">
-						<h4>Event Name</h4>
-							<input type="text" name="eventName"> 
-						<h4>Event Type</h4>
-							<label> <input type="radio" name="eventType" value="Party"> Party </label>
-							<label> <input type="radio" name="eventType" value="BarEvent"> Bar Event </label>
-							<label> <input type="radio" name="eventType" value="ClubEvent"> Club Event </label>
-							<label> <input type="radio" name="eventType" value="LiveMusic"> Live Music </label>
-							<label> <input type="radio" name="eventType" value="Other"> Other </label>
-						<br>
-						<h4>Location</h4>
-							<input type="text" name="location"> 
-						<h4>Website</h4>
-							<input type="text" name="website"> 
-						</br>
-						<h4>Date</h4>
-							<input type="date" name= "eventDate" id="eventDate" value="2020-01-01">
-						
-						<h4>Event Details</h4>
-							<input type="text" name="eventDetails"> 
-						<br>
-						<h4>Contact Info</h4>
-							<ul class="contact">
-								<li>Email: <input type="text" name="email"> </li>
-								<li>Phone: <input type="text" name="phone"> </li>
-								<li>Address: <input type="text" name="address"> </li>
-							</ul>
-						<h4 class="addImg">Add Images</h4> 
-							<label for="file-upload" class="custom-file-upload">
-								<i class="fas fa-images"></i>
-						</label>
-						<input id="file-upload" type="file"/>
-						<br> <br> <br>
-						<input type="submit" value="Submit">
-						<br> <br> <br>
-					</form> 
-				</section>
-			</section>
-		</div> 
-	</body>
+<head>
+    <meta charset="utf-8">
+    <title>Boogie: New Event</title>
+    <link rel="stylesheet" type="text/css" href="boogie.css"/>
+    <script src="https://kit.fontawesome.com/c3f6c26ab6.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+<!--Menu Bar for the Website -->
+<div class="header">
+    <ul class="menu" id="menu3">
+        <a href="index.html">
+            <li class="icon fas fa-home" id="first"></li>
+        </a><br>
+        <a href="TalentBar.html">
+            <li class="icon fas fa-star" id="second"></li>
+        </a><br>
+        <a href="NewPost.html">
+            <li class="icon fas fa-edit" id="third"></li>
+        </a>
+    </ul>
+</div>
+<div class="page" id="p3">
+    <section class="pageInfo">
+        <section class="newPostHead">
+            <span class="title">New Event</span>
+            <span class="hint">Please fill in the necessary information</span>
+        </section>
+        <section class="newPostBody">
+            <form class="eventForm" action="mailto:r.shortt98@gmail.com" method="POST">
+                <h4>Event Name</h4>
+                <input type="text" name="eventName">
+                <h4>Event Type</h4>
+                <label> <input type="radio" name="eventType" value="Party"> Party </label>
+                <label> <input type="radio" name="eventType" value="BarEvent"> Bar Event </label>
+                <label> <input type="radio" name="eventType" value="ClubEvent"> Club Event </label>
+                <label> <input type="radio" name="eventType" value="LiveMusic"> Live Music </label>
+                <label> <input type="radio" name="eventType" value="Other"> Other </label>
+                <br>
+                <h4>Location</h4>
+                <input type="text" name="location">
+                <h4>Website</h4>
+                <input type="text" name="website">
+                </br>
+                <h4>Date</h4>
+                <input type="date" name="eventDate" id="eventDate" value="2020-01-01">
+
+                <h4>Event Details</h4>
+                <input type="text" name="eventDetails">
+                <br>
+                <h4>Contact Info</h4>
+                <ul class="contact">
+                    <li>Email: <input type="text" name="email"></li>
+                    <li>Phone: <input type="text" name="phone"></li>
+                    <li>Address: <input type="text" name="address"></li>
+                </ul>
+                <h4 class="addImg">Add Images</h4>
+                <label for="file-upload" class="custom-file-upload">
+                    <i class="fas fa-images"></i>
+                </label>
+                <input id="file-upload" type="file"/>
+                <br> <br> <br>
+                <input type="submit" value="Submit">
+                <br> <br> <br>
+            </form>
+        </section>
+    </section>
+</div>
+</body>
 </html>
 	
