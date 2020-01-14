@@ -2,38 +2,46 @@
 <html lang="en">
 	<head>
 		<meta charset="utf-8">
-		<title>Boogie: NewPost</title>
-		<link rel="stylesheet" type="text/css" href="boogie.css"/>
+		<title>Boogie: New Post</title>
+		<link rel="stylesheet" type="text/css" href="newPost.css"/>
+		<link rel="stylesheet" type="text/css" href="navbar.css"/>
 		<script src="https://kit.fontawesome.com/c3f6c26ab6.js" crossorigin="anonymous"></script>
 	</head>
 	
 	<body> 
 	<!--Menu Bar for the Website -->
-		<div class="header">
-			<ul class="menu" id="menu3">
-				<a href="index.html"><li class="icon fas fa-home" id="first"></li></a><br>
-				<a href="TalentBar.html"><li class="icon fas fa-star" id="second"></li></a><br>
-				<a href="NewPost.html"><li class="icon fas fa-edit" id="third"></li></a>
-			</ul>
+		<div class="navbar" id="myNavBar3">
+			<a href="index.html" class="title">Boogie</a>
+			<span class="buttons">
+				<a href="index.html" class="fas fa-home"></a>
+				<a href="TalentBar.html" id="star" class="fas fa-star"></a>
+				<a href="NewPost.html" class="fas fa-edit"></a>
+			</span>
+			<a class="menuButton" onclick="toggleMenu()"><i class="fas fa-bars"></i></a>
 		</div>
 		
 		<div class="page" id="p3">
-			<section class="pageInfo">
-				<section class="newPostHead">
-					<span class="title">New Post</span>
-					<span class="hint">What type of post would you like to create?</span>
-				</section>
-				<section class="options">
-					<div class="OPT1"> <a href="CreateEvent.html" class="optTitle">Event</a></div>
-					<a href="CreateEvent.html" class="option1"></a>
-						
-					<span class="OPT2"><a href="CreateEvent.html"class="optTitle">Talent Bar</sapan> </span>
-					<a href="TalentPost.html" class="option2"></a>
-				</section>
-			</section>
+		<br> <br>
+			<div class="newPostHead">
+				<span class="title">New Post</span>
+				<span class="hint">What type of post would you like to create?</span>
+			</div>
+			<div class="options">
+				<button class="button button1" onclick="location.href='CreateEvent.html'" style="cursor:pointer;"><a href="CreateEvent.html" class="optTitle">Event</a></button> </a> 
+				<button class="button button2" onclick="location.href='TalentPost.html'" style="cursor:pointer;"><a href="TalentPost.html"class="optTitle">Talent Bar</a></button> 
+			</div>
+			
 		</div>
-		
-	
+		<script>
+			function toggleMenu() {
+				var x = document.getElementById("myNavBar3");
+				if (x.className === "navbar") {
+				x.className += " collapsed";
+				} else {
+					x.className = "navbar";
+				}
+			}
+		</script>
 	</body>
 
 

@@ -3,41 +3,40 @@
 	<head>
 		<meta charset="utf-8">
 		<title>Boogie: New Talent-Post</title>
-		<link rel="stylesheet" type="text/css" href="boogie.css"/>
+		<link rel="stylesheet" type="text/css" href="form.css"/>
+		<link rel="stylesheet" type="text/css" href="navbar.css"/>
 		<script src="https://kit.fontawesome.com/c3f6c26ab6.js" crossorigin="anonymous"></script>
 	</head>
 	
 	<body> 
 	<!--Menu Bar for the Website -->
-		<div class="header">
-			<ul class="menu" id="menu3">
-				<a href="index.html"><li class="icon fas fa-home" id="first"></li></a><br>
-				<a href="TalentBar.html"><li class="icon fas fa-star" id="second"></li></a><br>
-				<a href="NewPost.html"><li class="icon fas fa-edit" id="third"></li></a>
-			</ul>
+		<div class="navbar" id="myNavBar3">
+			<a href="index.html" class="title">Boogie</a>
+			<span class="buttons">
+				<a href="index.html" class="fas fa-home"></a>
+				<a href="TalentBar.html" id="star" class="fas fa-star"></a>
+				<a href="NewPost.html" class="fas fa-edit"></a>
+			</span>
+			<a class="menuButton" onclick="toggleMenu()"><i class="fas fa-bars"></i></a>
 		</div>
 		<div class="page" id="p3"> 
 			<section class="pageInfo">
-				<section class="newPostHead">
-					<span class="title">New Talent-Post</span>
-					<span class="hint">Please fill in the necessary information</span>
-				</section>
 				<section class="newPostBody">
-					<form class="eventForm" action="mailto:r.shortt98@gmail.com" method="POST">
-						<h4>Post Title</h4>
+					<form name="form2" class="eventForm" action="mailto:r.shortt98@gmail.com" method="POST" onsubmit="return submitForm();">
+						<h4>Post Title <span class="required">*</span></h4>
 						<input type="text" name="postTitle"> 
-						<h4>Post Purpose</h4>
+						<h4>Post Purpose <span class="required">*</span></h4>  
 							<input type="radio" name="purpose" value="soliciting"> Soliciting Services<br>
 							<input type="radio" name="purpose" value="advertising"> Advertising Services<br>
 						<br>
-						<h4>Post Details</h4>
+						<h4>Post Details <span class="required">*</span></h4>
 						<input type="text" name="eventDetails"> 
 						<br>
 						<h4>Contact Info</h4>
 							<ul class="contact">
-							<li>Email:<input type="text" name="email"> </li>
-							<li>Phone:<input type="text" name="phone"> </li>
-							<li>Address: <input type="text" name="address"> </li>
+							<li>Email <span class="required">*</span><input type="text" name="email"> </li>
+							<li>Phone <input type="text" name="phone"> </li>
+							<li>Address <input type="text" name="address"> </li>
 							</ul>
 						<h4 class="addImg">Add Images</h4> 
 							<label for="file-upload" class="custom-file-upload">
@@ -50,6 +49,57 @@
 					</form> 
 				</section>
 			</section>
-		</div> 
+		</div>
+		<script>
+			function toggleMenu() {
+				var x = document.getElementById("myNavBar3");
+				if (x.className === "navbar") {
+				x.className += " collapsed";
+				} else {
+					x.className = "navbar";
+				}
+			}
+			
+			function submitForm() {
+				var formErrors = ["","","",""];
+				var input1  = document.form2.postTitle.value;
+				if (input1 == "") {
+					formErrors[0] = "Please input a name for your event name";
+				}
+				var input2 = document.form2.purpose.value; 
+				if (input2 == "" ) {
+					formErrors[1] = "Please choose a post type";
+				}
+				var input3 = document.form2.eventDetails.value; 
+				if (input3 == "" ) {
+					formErrors[2] = "Please input post details";
+				}
+				var input4 = document.form2.email.value;
+				if (input4 == "") {
+					formErrors[3] = "Please enter a valid email address";
+				} else {
+					if (input4.search("@") == -1) {
+						formErrors[3] = "Please enter a valid email address";
+					}
+				}
+				var i=0;
+				var passed=1;
+				var alertMessage="";
+				for (i=0;i<4;i++) {
+					var errName = "error"+i;
+					if (formErrors[i] != "") {
+						alertMessage += formErrors[i] + "\n";
+						passed=0;
+					}
+				}
+				if (passed == 0) {
+					alert(alertMessage);
+					return false;
+				} else {
+					return true;
+				}
+				
+			}
+		</script>		
 	</body>
 </html>
