@@ -27,7 +27,7 @@
 		</div>
 		
 		<div class="page" id="p2">
-			<div id="hacker-list">
+			<div id="talent-list">
 				<section class="tbFeed">
 					<div class="filterSection" id="homeFilter">
 						<h3 onclick="toggleOptions()" class="filterHead"> Filter </h3>
@@ -286,7 +286,7 @@
 			/* This is when the user selects to clear their filters  */
 			var filterPosts = document.getElementsByClassName("post");
 			document.getElementById('searchBar').value = '';
-			hackerList.search();
+			talentList.search();
 			for (i=0;i < filterPosts.length; i++) {
 			  filterPosts[i].style.display = "block"
 			}
@@ -319,7 +319,7 @@
 		var options = {
 			valueNames: [ 'post' ]
 		};
-		var hackerList = new List('hacker-list', options);
+		var talentList = new List('talent-list', options);
 		
 		
 		</script>
