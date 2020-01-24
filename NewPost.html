@@ -6,6 +6,8 @@
 		<link rel="stylesheet" type="text/css" href="newPost.css"/>
 		<link rel="stylesheet" type="text/css" href="navbar.css"/>
 		<script src="https://kit.fontawesome.com/c3f6c26ab6.js" crossorigin="anonymous"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
 	</head>
 	
 	<body> 
@@ -28,19 +30,22 @@
 			</div>
 			<div class="options">
 				<button class="button button1" onclick="location.href='CreateEvent.html'" style="cursor:pointer;"><a href="CreateEvent.html" class="optTitle">Event</a></button> </a> 
-				<button class="button button2" onclick="location.href='TalentPost.html'" style="cursor:pointer;"><a href="TalentPost.html"class="optTitle">Talent Bar</a></button> 
+				<button class="button button2" onclick="location.href='TalentPost.html'" style="cursor:pointer;"><a href="TalentPost.html"class="optTitle" id="title2">Talent Bar</a></button> 
 			</div>
 			
 		</div>
 		<script>
 			function toggleMenu() {
-				var x = document.getElementById("myNavBar3");
-				if (x.className === "navbar") {
+			var x = document.getElementById("myNavBar3");
+			var y = document.getElementById("p3");
+			if (x.className === "navbar") {
 				x.className += " collapsed";
-				} else {
-					x.className = "navbar";
-				}
+				y.className += " shifted";
+			} else {
+				x.className = "navbar";
+				y.className = "page";
 			}
+		}
 		</script>
 	</body>
 

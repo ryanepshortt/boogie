@@ -3,9 +3,15 @@
 	<head>
 		<meta charset="utf-8">
 		<title>Boogie: New Talent-Post</title>
-		<link rel="stylesheet" type="text/css" href="form.css"/>
+		<link rel="stylesheet" type="text/css" href="pages.css"/>
 		<link rel="stylesheet" type="text/css" href="navbar.css"/>
+		<link rel="stylesheet" type="text/css" href="form.css"/>
 		<script src="https://kit.fontawesome.com/c3f6c26ab6.js" crossorigin="anonymous"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+		<script src="https://cdn.rawgit.com/nnattawat/flip/master/dist/jquery.flip.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js"></script>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
 	</head>
 	
 	<body> 
@@ -20,14 +26,14 @@
 			<a class="menuButton" onclick="toggleMenu()"><i class="fas fa-bars"></i></a>
 		</div>
 		<div class="page" id="p3"> 
-			<section class="pageInfo">
+			<section id="formPage" class="pageInfo">
 				<section class="newPostBody">
 					<form name="form2" class="eventForm" action="mailto:r.shortt98@gmail.com" method="POST" onsubmit="return submitForm();">
 						<h4>Post Title <span class="required">*</span></h4>
 						<input type="text" name="postTitle"> 
 						<h4>Post Purpose <span class="required">*</span></h4>  
-							<input type="radio" name="purpose" value="soliciting"> Soliciting Services<br>
-							<input type="radio" name="purpose" value="advertising"> Advertising Services<br>
+							<label> <input type="radio" name="purpose" value="soliciting"> Soliciting Services </label>
+							<label> <input type="radio" name="purpose" value="advertising"> Advertising Services </label>
 						<br>
 						<h4>Post Details <span class="required">*</span></h4>
 						<input type="text" name="eventDetails"> 
@@ -53,10 +59,13 @@
 		<script>
 			function toggleMenu() {
 				var x = document.getElementById("myNavBar3");
+				var y = document.getElementById("formPage");
 				if (x.className === "navbar") {
-				x.className += " collapsed";
+					x.className += " collapsed";
+					y.className += " shifted";
 				} else {
 					x.className = "navbar";
+					y.className = "pageInfo";
 				}
 			}
 			

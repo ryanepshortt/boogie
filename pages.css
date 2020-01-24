@@ -6,37 +6,205 @@ html, body, .page {
   color: #fff;
   overflow: hidden; 
 }
-
 * {
   font-family: 'open sans', 'lato', 'helvetica', sans-serif;
 }
 
-#p1, #p2 { background-image: radial-gradient(#84CEEB, #84a5eb); width:100%;}
+
+
+
+
 
 
 a {
-  text-decoration: none;
+	text-decoration: none;
+}
+a:visited {
+	color: white;
 }
 
-
-
-
-.page .pageInfo {
-	position:absolute;
-	width: 100%;
-	height: 100%;
+#p1, #p2 { 
+	background-image: radial-gradient(#84CEEB, #84a5eb); 
+	width:100%;
 }
-
-
-section.homePage{
+#p2 {
 	overflow-y:scroll;
 }
+.page, .shifted { 
+	position: relative;
+	height: calc(100% - 75px);
+	
+}
+@media screen and (max-width: 600px) {
+	.page.shifted { 
+		height: calc(100% - 279px);
+	}
+}
+
+
+
+
+
+
+section.homeFeed {
+	position:absolute;
+	width: 60%;
+	height: 100%;
+	margin-left:40%;
+	overflow-y:scroll;
+}
+section.map {
+	position:absolute;
+	width:40%;
+	height:100%;
+	overflow-y:none;
+	border: 8px solid white;
+}
+.mapouter { 
+	position:absolute;
+	text-align:right;
+	height:100%;
+	width:100%;
+}
+.gmap_canvas {
+	overflow:hidden;
+	background:none!important;
+	height:100%;
+	width:100%;
+}
+.gMap {
+	display:none;
+}
+#post0map {
+	display:block;
+}
+@media screen and (max-width: 850px) {
+	section.map {
+		display:none;
+	}
+	
+	section.homeFeed {
+		width: 100%;
+		margin-left: 0;
+	}
+}
+
+
+
+
+
+
+
+
+.filterSection {
+	width:100%;
+}
+.filterHead {
+	font-size: 35px;
+	text-align:center;
+	margin-bottom:10px;
+	margin-right: 42%;
+	margin-left: 42%;
+	cursor: pointer;
+}
+.filterOpt {
+	display:none;
+}
+.filterOpt.dropped {
+	display:flex;
+	float:center;
+	width:100%;
+	font-size: 25px;
+	margin-bottom: 25px;
+}
+#leftFilt {
+	float: left;
+	margin-left:3%;
+	width:80%;
+}
+#secondFilter {
+	margin-left: 3%;
+	margin-right: 3%;
+}
+#clr {
+	float:right;
+	margin-right:3%;
+}
+.click {
+	cursor:pointer;
+}
+input {
+  border:solid 1px #ccc;
+  border-radius: 5px;
+  padding:7px 14px;
+  max-height: 100px;
+  margin-right: 4%;
+  margin-left: 4%
+}
+input:focus {
+  outline:none;
+  border-color:#aaa;
+}
+@media screen and (max-width: 1139px) {
+	.homeFeed .filterOpt.dropped {
+		display:block;
+		width:100%;
+		font-size: 25px;
+		text-align:center;
+	}
+	.homeFeed .filterOpt.dropped #leftFilt{
+		margin-left: initial;
+		margin-right: initial;
+		width:100%;
+	}
+	.homeFeed .filterOpt.dropped #clr{
+		display:block;
+		float:initial;
+		text-align:center;
+		margin-right:initial;
+	}
+	.homeFeed .filterOpt {
+		display:none;
+	}
+	
+}
+@media screen and (max-width: 667px) {
+	.tbFeed .filterOpt.dropped {
+		display:block;
+		width:100%;
+		font-size: 25px;
+		text-align:center;
+	}
+	.tbFeed .filterOpt.dropped #leftFilt{
+		margin-left: initial;
+		margin-right: initial;
+		width:100%;
+	}
+	.tbFeed .filterOpt.dropped #clr{
+		display:block;
+		float:initial;
+		text-align:center;
+		margin-right:initial;
+	}
+	.tbFeed .filterOpt {
+		display:none;
+	}
+	
+}
+
+
+
+
+
+
+
 
 .post {
 	width: 80%;
 	margin-left:10%;
 	margin-top: 75px;
 	margin-bottom: 75px;
+	margin-right: 10%;
 	border: 7px solid white;
 	border-radius: 12px;
 	position:relative;
@@ -45,27 +213,31 @@ section.homePage{
 	line-height: 1.4;
 }
 
+#post0 {
+	margin-top:25px;
+}
+ul.list {
+	list-style-type: none;
+	list-style-position:inside;
+	margin-left:0;
+	padding:0;
+}
+.post:hover {
+	cursor:pointer;
+}
 .external:visited {
 	color:white;
 }
-
 .external {
 	text-decoration:underline;
 }
-
 .post li {
 	list-style-type: none;
 }
-
-#contactInfo li {
-	list-style-type: disc;
-}
-
 .date {
 	flex: 48%;
 	max-width: 48%;
 }
-
 .location {
 	flex: 48%;
 	max-width: 48%;
@@ -73,15 +245,12 @@ section.homePage{
 .NightLife {
 	background-image: repeating-linear-gradient(#5AB9EA, #8860D0);
 }
-
 .LiveMusic {
 	background-image:  repeating-linear-gradient(#5AB9EA, #8860D0);
 }
-
 .Party {
 	background-image: repeating-linear-gradient(#5AB9EA, #8860D0);
 }
-
 .talent {
 	background-image: repeating-linear-gradient(#5AB9EA, #8860D0);
 }
@@ -93,28 +262,12 @@ section.homePage{
 .post h4 {
 	font-size: 20px;
 }
-
-.filterHead, .filterOpt {
-  cursor: pointer;
-}
-
-.filterHead {
-	font-size: 35px;
-	margin-left: 11%;
-}
-
-.filterOpt {
+.row {
 	display:flex;
-	font-size: 25px;
-	list-style-type: none;
-	margin-left:11%;
-	
 }
-
-.filterOpt li {
-	margin-right:3%;
-}
-
-.filterSection {
-	width:100%;
+@media screen and (max-width: 540px) {
+	.post ul.contact {
+		list-style-type: none;
+		padding: 0;
+	}
 }

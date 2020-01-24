@@ -6,6 +6,8 @@
 		<link rel="stylesheet" type="text/css" href="form.css"/>
 		<link rel="stylesheet" type="text/css" href="navbar.css"/>
 		<script src="https://kit.fontawesome.com/c3f6c26ab6.js" crossorigin="anonymous"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
 	</head>
 	
 	<body> 
@@ -20,7 +22,7 @@
 			<a class="menuButton" onclick="toggleMenu()"><i class="fas fa-bars"></i></a>
 		</div>
 		<div class="page" id="p3"> 
-			<section class="pageInfo">
+			<section id="formPage" class="pageInfo">
 				<section class="newPostBody">
 					<form name="form1" class="eventForm" method="POST" action="mailto:r.shortt98@gmail.com" onsubmit="return submitForm();">
 						<h4>Event Name  <span class="required">*</span></h4>
@@ -68,14 +70,16 @@
 		<script>
 			function toggleMenu() {
 				var x = document.getElementById("myNavBar3");
+				var y = document.getElementById("formPage");
 				if (x.className === "navbar") {
-				x.className += " collapsed";
+					x.className += " collapsed";
+					y.className += " shifted";
 				} else {
 					x.className = "navbar";
+					y.className = "pageInfo";
 				}
 			}
-
-			function openInput() {
+				function openInput() {
 				var div = document.getElementById("otherInput");
 				div.style.display ="block";
 			}
@@ -159,7 +163,9 @@
 					alert(alertMessage);
 					return false;
 				} else {
+					window.location.href = 'index.html'
 					return true;
+					
 				}
 			}
 		</script>

@@ -7,6 +7,11 @@
 		<link rel="stylesheet" type="text/css" href="navbar.css"/>
 		<link rel="stylesheet" type="text/css" href="slideShow.css"/>
 		<script src="https://kit.fontawesome.com/c3f6c26ab6.js" crossorigin="anonymous"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+		<script src="https://cdn.rawgit.com/nnattawat/flip/master/dist/jquery.flip.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js"></script>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
 	</head>
 	
 	<body> 
@@ -15,149 +20,176 @@
 	
 		<div class="navbar" id="myNavBar1">
 			<a href="index.html" class="title">Boogie</a>
-			<span class="buttons">
+			<span class="buttons" id="drop">
 				<a href="index.html" class="fas fa-home"></a>
 				<a href="TalentBar.html" id="star" class="fas fa-star"></a>
 				<a href="NewPost.html" class="fas fa-edit"></a>
 			</span>
-			<a class="menuButton" onclick="toggleMenu()"><i class="fas fa-bars"></i></a>
+			<a class="menuButton" onclick="toggleMenu()"id="hamburger"><i class="fas fa-bars"></i></a>
 		</div>
 		
 		
 		<div class="page" id="p1">
-			<section class="pageInfo homePage">
-				<h3 onclick="toggleOptions()" class="filterHead"> Filter </h3>
-				<ul class="filterOpt">
-					<li onclick="filter(0)" id="firstFilter"> LiveMusic </li>
-					<li onclick="filter(1)" id="secondFilter"> NightLife </li>
-					<li onclick="filter(2)" id="thirdFilter"> Parties </li>
-					<li onclick="filter(-1)"> Clear </li>
-				</ul>
-			
-				<div class="post NightLife" id="post0">
-					<h3>Latin Night</h3> <p id="demo"></p>
-					<ul>
-						<li><h4>Event Details</h4> Come One Come All!!! We're having a Latin themed night at our club in December we'll be having salsa music as well as 50% off tequila shots, cover will be 10$. Come wearing latin themed clothes and prepare for an amazing night</li>
-						<div class="row">
-							<li class="date"><h4>Date</h4> Dec 12 2019 </li>
-							<li class="location"><h4>Location</h4> <a class="external" href="https://seventyseven.ca">Club 77</a></li> 
-						</div>
-						<li><h4>Contact Info</h4>  
-							<ul id="contactInfo">
-								<li>Email: club77@gmail.com</li>
-								<li>Phone: 905-527-7488</li>
-								<li>Address: 77 King William Street, Hamilton, Ontario </li>
-							</ul>
-						</li>
-						<li><h4>Photos:</h4>
-							<div class="slideshow-container">
-								<div class="mySlides fade">
-								  <div class="numbertext">1 / 2</div>
-									<img src="https://uploads-ssl.webflow.com/5ced58e858a6e1d2e62ee140/5d5494934c15318fad0326a6_PAN%20POT%20%40%20CODA%20-%20021.jpg" style="width:100%">
-								</div>
-
-								<div class="mySlides fade">
-								  <div class="numbertext">2 / 2</div>
-									<img src="https://i.ytimg.com/vi/YI41VBAYL5g/maxresdefault.jpg" style="width:100%">
-								</div>
-                
-								<a class="prev" onclick="plusSlides(-1,0)">&#10094;</a>
-								<a class="next" onclick="plusSlides(1,0)">&#10095;</a>
-							</div>
-							<br>
-
-							<div style="text-align:center">
-							  <span class="dot" onclick="currentSlide(1,0)"></span> 
-							  <span class="dot" onclick="currentSlide(2,0)"></span> 
-							</div>
-
-						</li>
-					</ul>
-				</div>
-				<div class="post LiveMusic" id="post1">
-					<h3>James Canavan Live</h3>
-					<ul>
-						<li><h4>Event Details</h4> Hi fellow Music Lovers I'm going to be playing a show at the musiki cafe in kingston.I know some of you are familiar with what I do but for those of you who don't know here's a little bit about me. I play mostly acoustic covers of pop and rock hits. I've written couple songs which sometimes I mix in as well.</li>
-						<div class="row">
-							<li class="date"><h4>Date</h4> Oct 29th 2019 </li>
-							<li class="location"><h4>Location</h4> <a class="external" href="https://www.musiikkicafe.com/">Musiki Cafe</a></li> 
-						</div>
-						<li><h4>Contact Info</h4> 
-							<ul id="contactInfo">
-								<li>Email: MusikiCafe@outlook.com</li>
-								<li>Phone: 613-542-2233</li>
-								<li>Address: 73 Brock St, Kingston, ON</li>
-							</ul>
-						</li>
-						<li><h4>Photos:</h4> 
-							<div class="slideshow-container">
-								<div class="mySlides fade">
-								  <div class="numbertext">1 / 2</div>
-									<img src="https://s3-media2.fl.yelpcdn.com/bphoto/g9i-PesyMtomURTD6rH75g/o.jpg" style="width:100%">
-								</div>
-
-								<div class="mySlides fade">
-								  <div class="numbertext">2 / 2</div>
-									<img src="https://www.kingstonist.com/wp-content/uploads/2014/09/09sep_musiiki1.png" style="width:100%">							 
-								</div>
-
-								<a class="prev" onclick="plusSlides(-1,1)">&#10094;</a>
-								<a class="next" onclick="plusSlides(1,1)">&#10095;</a>
-							</div>
-							<br>
-
-							<div style="text-align:center">
-							  <span class="dot" onclick="currentSlide(1,1)"></span> 
-							  <span class="dot" onclick="currentSlide(2,1)"></span> 
-							</div>
-
-						
-						</li> 
-					</ul>
-				</div>
-				<div class="post Party" id="post2">
-					<h3>Beta Theta Pi Keg Party</h3>
-					<ul>
-						<li><h4>Event Details</h4> Your favourite campus fraternity Beta Theta Pi, is thrwoing a kegger this weekend. It's going to be Greek themed so bring your togas!!! There will be a 5$ charge for entry, once you're you can have all the beer your heart desires.</li>
-						<div class="row">
-							<li class="date"><h4>Date</h4> Oct 26 2019 </li>
-							<li class="location"><h4>Location</h4>The Beta Theta Pi House</li> 
-						</div>
-						<li><h4>Contact Info</h4>  
-							<ul id="contactInfo">
-								<li>Email: btpfrat@hotmail.com</li>
-								<li>Phone: 905-298-2049</li>
-								<li>Address: 47 Dalewood Cres, Hamilton, Ontario </li>
-							</ul>
-						</li>
-						<li><h4>Photos:</h4> 
-							<div class="slideshow-container">
-								<div class="mySlides fade">
-								  <div class="numbertext">1 / 2</div>
-									<img src="https://img.offcampusimages.com/HxcCS_jA83VVo0L7bMRCCh0Z8p8=/fit-in/960x960/left/top/smart/images/uhara6n_u045afdcqxk8ttdmlwdmucxxr9ffgnusyoe.jpeg" style="width:100%">
-								  
-								</div>
-
-								<div class="mySlides fade">
-								  <div class="numbertext">2 / 2</div>
-									<img src="https://www.congerbuilt.com/wp-content/uploads/2018/08/Beta-Theta-Pi-4.jpg" style="width:100%">
-								 
-								</div>
-
-								<a class="prev" onclick="plusSlides(-1,2)">&#10094;</a>
-								<a class="next" onclick="plusSlides(1,2)">&#10095;</a>
-							</div>
-							<br>
-
-							<div style="text-align:center">
-							  <span class="dot" onclick="currentSlide(1,2)"></span> 
-							  <span class="dot" onclick="currentSlide(2,2)"></span> 
-							</div>
-						</li>
-					</ul>
-				</div>
-				<br><br><br><br><br>
+			<section class="map">
+				<span class="gMap" id="post0map">
+					<div class="mapouter"><div class="gmap_canvas"><iframe width="100%" height="100%"  id="gmap_canvas" src="https://maps.google.com/maps?q=club%2077%20hamilton&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no"></iframe><a href="https://www.online-timer.net"></a></div></div>
+				</span>
+				<span class="gMap" id="post1map">
+					<div class="mapouter"><div class="gmap_canvas"><iframe width="100%" height="100%" id="gmap_canvas" src="https://maps.google.com/maps?q=mousikki%20cafe%20kingston&t=&z=15&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" ></iframe><a href="https://www.online-timer.net"></a></div></div>
+				</span>
+				<span class="gMap" id="post2map">
+					<div class="mapouter"><div class="gmap_canvas"><iframe width="100%" height="100%" id="gmap_canvas" src="https://maps.google.com/maps?q=1125%20Colonel%20By%20Dr%2C%20Ottawa%20Ottawa%2C%20Ontario%20K1S%205B6&t=&z=15&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" ></iframe><a href="https://www.online-timer.net"></a></div></div>
+				</span>
 			</section>
+			<div id="hacker-list">
+				<section class="homeFeed">
+					<div class="filterSection" id="homeFilter">
+						<h3 onclick="toggleOptions()" class="filterHead"> Filter </h3>
+						<div id="myFilter" class="filterOpt">
+							<span id="leftFilt">
+								<span onclick="filter(0)" class="click" id="firstFilter"> LiveMusic </span>
+								<span onclick="filter(1)" class="click" id="secondFilter"> NightLife </span>
+								<span onclick="filter(2)" class="click" id="thirdFilter"> Parties </span>
+							</span>
+							<input class="search" id="searchBar" placeholder="Search"/>
+							<span onclick="filter(-1)" class="click" id="clr"> Clear </span>
+							
+						</div>
+					</div>
+					<ul class="list">
+						<li>
+							<div class="post NightLife" id="post0" >
+								<h3>Latin Night</h3> <p id="demo"></p>
+								<ul>
+									<li><h4>Event Details</h4> Come One Come All!!! We're having a Latin themed night at our club in December we'll be having salsa music as well as 50% off tequila shots, cover will be 10$. Come wearing latin themed clothes and prepare for an amazing night</li>
+									<div class="row">
+										<li class="date"><h4>Date</h4> Dec 12 2019 </li>
+										<li class="location"><h4>Location</h4> <a class="external" href="https://seventyseven.ca">Club 77</a></li> 
+									</div>
+									<li><h4>Contact Info</h4>  
+										<ul class="contact">
+											<li>Email: club77@gmail.com</li>
+											<li>Phone: 905-527-7488</li>
+											<li>Address: 77 King William Street, Hamilton, Ontario </li>
+										</ul>
+									</li>
+									<li><h4>Photos:</h4>
+										<div class="slideshow-container">
+											<div class="mySlides fade">
+											  <div class="numbertext">1 / 2</div>
+												<img src="https://uploads-ssl.webflow.com/5ced58e858a6e1d2e62ee140/5d5494934c15318fad0326a6_PAN%20POT%20%40%20CODA%20-%20021.jpg" style="width:100%">
+											</div>
+
+											<div class="mySlides fade">
+											  <div class="numbertext">2 / 2</div>
+												<img src="https://i.ytimg.com/vi/YI41VBAYL5g/maxresdefault.jpg" style="width:100%">
+											</div>
+							
+											<a class="prev" onclick="plusSlides(-1,0)">&#10094;</a>
+											<a class="next" onclick="plusSlides(1,0)">&#10095;</a>
+										</div>
+										<br>
+
+										<div style="text-align:center">
+										  <span class="dot" onclick="currentSlide(1,0)"></span> 
+										  <span class="dot" onclick="currentSlide(2,0)"></span> 
+										</div>
+
+									</li>
+								</ul>						
+							</div>
+						</li>
+						<li>
+							<div class="post LiveMusic" id="post1" >
+								
+								<h3>James Canavan Live</h3>
+								<ul>
+									<li><h4>Event Details</h4> Hi fellow Music Lovers I'm going to be playing a show at the musiki cafe in kingston.I know some of you are familiar with what I do but for those of you who don't know here's a little bit about me. I play mostly acoustic covers of pop and rock hits. I've written couple songs which sometimes I mix in as well.</li>
+									<div class="row">
+										<li class="date"><h4>Date</h4> Oct 29th 2019 </li>
+										<li class="location"><h4>Location</h4> <a class="external" href="https://www.musiikkicafe.com/">Musiki Cafe</a></li> 
+									</div>
+									<li><h4>Contact Info</h4> 
+										<ul class="contact">
+											<li>Email: MusikiCafe@outlook.com</li>
+											<li>Phone: 613-542-2233</li>
+											<li>Address: 73 Brock St, Kingston, ON</li>
+										</ul>
+									</li>
+								
+									<li><h4>Photos:</h4> 
+										<div class="slideshow-container">
+											<div class="mySlides fade">
+											  <div class="numbertext">1 / 2</div>
+												<img src="https://s3-media2.fl.yelpcdn.com/bphoto/g9i-PesyMtomURTD6rH75g/o.jpg" style="width:100%">
+											</div>
+
+											<div class="mySlides fade">
+											  <div class="numbertext">2 / 2</div>
+												<img src="https://www.kingstonist.com/wp-content/uploads/2014/09/09sep_musiiki1.png" style="width:100%">							 
+											</div>
+
+											<a class="prev" onclick="plusSlides(-1,1)">&#10094;</a>
+											<a class="next" onclick="plusSlides(1,1)">&#10095;</a>
+										</div>
+										<br>
+
+										<div style="text-align:center">
+										  <span class="dot" onclick="currentSlide(1,1)"></span> 
+										  <span class="dot" onclick="currentSlide(2,1)"></span> 
+										</div>
+									</li> 
+								</ul>
+							</div>
+						</li>
+						<li>
+							<div class="post Party" id="post2" >
+							
+								<h3>Beta Theta Pi Keg Party</h3>
+								<ul>
+									<li><h4>Event Details</h4> Your favourite campus fraternity Beta Theta Pi, is thrwoing a kegger this weekend. It's going to be Greek themed so bring your togas!!! There will be a 5$ charge for entry, once you're you can have all the beer your heart desires.</li>
+									<div class="row">
+										<li class="date"><h4>Date</h4> Oct 26 2019 </li>
+										<li class="location"><h4>Location</h4>The Beta Theta Pi House</li> 
+									</div>
+									<li><h4>Contact Info</h4>  
+										<ul class="contact">
+											<li>Email: btpfrat@hotmail.com</li>
+											<li>Phone: 905-298-2049</li>
+											<li>Address: 1125 Colonel By Dr, Ottawa, Ontario </li>
+										</ul>
+									</li>
+								
+									<li><h4>Photos:</h4> 
+										<div class="slideshow-container">
+											<div class="mySlides fade">
+											  <div class="numbertext">1 / 2</div>
+												<img src="https://img.offcampusimages.com/HxcCS_jA83VVo0L7bMRCCh0Z8p8=/fit-in/960x960/left/top/smart/images/uhara6n_u045afdcqxk8ttdmlwdmucxxr9ffgnusyoe.jpeg" style="width:100%">
+											  
+											</div>
+
+											<div class="mySlides fade">
+											  <div class="numbertext">2 / 2</div>
+												<img src="https://www.congerbuilt.com/wp-content/uploads/2018/08/Beta-Theta-Pi-4.jpg" style="width:100%">
+											 
+											</div>
+
+											<a class="prev" onclick="plusSlides(-1,2)">&#10094;</a>
+											<a class="next" onclick="plusSlides(1,2)">&#10095;</a>
+										</div>
+										<br>
+
+										<div style="text-align:center">
+										  <span class="dot" onclick="currentSlide(1,2)"></span> 
+										  <span class="dot" onclick="currentSlide(2,2)"></span> 
+										</div>
+									</li>
+								</ul>
+							</div>
+						</li>
+					</ul>
+				</section>
+			</div>
 		</div>
 		<script>
 			
@@ -173,7 +205,7 @@
 				 slideArr.push(1);
 			  }
 			}
-			showAllSlides()
+			showAllSlides();
 
 			function plusSlides(n,p) {
 			  slideArr[p] += n;
@@ -192,7 +224,6 @@
 			 
 			  if (n > slides.length) {slideArr[p]=1}   
 			  if (n < 1) {slideArr[p] = slides.length}
-			 console.log(slideArr.toString())
 			  for (i = 0; i < slides.length; i++) {
 				slides[i].style.display = "none";  
 			  }
@@ -226,18 +257,35 @@
 			
 			var filters = [0, 0, 0];
 			/* This array holds the current value for each filter option. 1 is for when the user wants the results filtered out, 0 is for when they want to view those results */
+			
+			function toggleOptions() {
+				var filt = document.getElementById("myFilter");
+				if (filt.className === "filterOpt") {
+					filt.className += " dropped";
+				} else {
+					filt.className = "filterOpt";
+					
+				}
+			}
+			
+			
+			/* This is the old filter function
+			
 			var filt = document.getElementsByClassName("filterOpt");
 			filt[0].style.display = "none";
 			var view = 0; 
 			function toggleOptions() {
-			  if (view == 0) {
-				filt[0].style.display = "flex";
-			  }
-			  if (view == 1) {
-				filt[0].style.display = "none";
-			  }
-			  view ^= 1;
-			}
+				if (view == 0) {
+					filt[0].style.display = "flex";
+				}
+				if (view == 1) {
+					filt[0].style.display = "none";
+				}
+				view ^= 1;
+			} 
+			
+			*/
+			
 			/* This variable is used to dictate whether or not the user wants to display the filter options */
 			/* 0 means that the user doesn't want to view it, 1 means they do */
 			/* toggleOptions is a functions that simply toggles the view between flex and none for the filter options */
@@ -294,6 +342,8 @@
 			  if (n == -1) {
 				/* This is when the user selects to clear their filters  */
 				var filterPosts = document.getElementsByClassName("post");
+				document.getElementById('searchBar').value = '';
+				hackerList.search();
 				for (i=0;i < filterPosts.length; i++) {
 				  filterPosts[i].style.display = "block"
 				}
@@ -316,15 +366,35 @@
 		  
 			function toggleMenu() {
 				var x = document.getElementById("myNavBar1");
+				var y = document.getElementById("p1");
 				if (x.className === "navbar") {
-				x.className += " collapsed";
+					x.className += " collapsed";
+					y.className += " shifted";
 				} else {
 					x.className = "navbar";
+					y.className = "page";
 				}
 			}
-		  
+			
+			$(".post").click(function(){
+				for (i=0;i<count;i++) {
+					var mapNum = "post" + i + "map";
+					if ( this.id != "post" + i ){
+						$("#" + mapNum).hide();
+					} else {
+						$("#" + mapNum).show();
+					}
+				}
+			});
+		
+			var options = {
+				valueNames: [ 'post' ]
+			};
+			var hackerList = new List('hacker-list', options);
+
+			
+
 		</script>
-	
 	</body>
 
 </html>
