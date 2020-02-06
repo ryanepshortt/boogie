@@ -37,7 +37,6 @@ a {
 	
 }
 .newPostBody {
-	border-radius: 5px;
 	background-color: #f2f2f2;
 }
 section.newPostBody, section.homePage{
@@ -48,6 +47,9 @@ section.newPostBody, section.homePage{
 	.pageInfo.shifted {
 		height: calc(100% - 279px);
 	}
+	.radOpt {
+		display:block;
+	}	
 }
 
 
@@ -72,8 +74,9 @@ input[type=text] {
 input[type=text]:focus {
 	background-color: lightblue;
 }
-#otherInput {
+.otherInput {
 	display:none;
+	margin-left: 10%;
 }
 ul.contact {
 	list-style-type: none;
@@ -83,7 +86,7 @@ h4.addImg {
 	width: 100%;
 	text-align:center;
 }
-input[type="file"] {
+#file-upload {
     display: none;
 }
 .custom-file-upload {
@@ -112,7 +115,67 @@ input[type=submit] {
 input[type=submit]:hover {
 	background:#552e9c;
 }
+/* Removes the clear button from date inputs */
+input[type="date"]::-webkit-clear-button {
+    display: none;
+}
 
+/* Removes the spin button */
+input[type="date"]::-webkit-inner-spin-button { 
+    display: none;
+}
+
+/* Always display the drop down caret */
+input[type="date"]::-webkit-calendar-picker-indicator {
+    color: #2c3e50;
+}
+
+/* A few custom styles for date inputs */
+input[type="date"] {
+    appearance: none;
+    -webkit-appearance: none;
+    color: #95a5a6;
+    font-family: "Helvetica", arial, sans-serif;
+    font-size: 18px;
+    border:1px solid #ecf0f1;
+    padding:5px;
+    display: inline-block !important;
+    visibility: visible !important;
+}
+
+input[type="date"], focus {
+	display: block;
+    color: #95a5a6;
+    box-shadow: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+}
+
+
+
+.form-group {
+	color:black;
+}
+
+.tall {
+	
+	width:99%;
+	min-width:99%;
+	max-width:99%;
+	height:300px;
+	max-height:500px;
+	min-height:100px;
+	
+	display: inline-block;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	box-sizing: border-box;
+}
+
+.tall.form-control {
+	height: 150px;
+	max-height:300px;
+}
 
 
 
